@@ -1,3 +1,4 @@
 DROP TABLE game;
 DROP TABLE goal;
 DROP TABLE goal_reached;
+#Poistaa databasesta ylimääräiset taulut
