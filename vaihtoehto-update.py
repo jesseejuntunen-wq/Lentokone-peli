@@ -62,7 +62,7 @@ while aika > 0:
     print("Valitse seuraava lentokenttä:")
 
 
-    # HAETAAN 2 SATUNNAISTA LENTOKENTTÄÄ
+    # HAETAAN 3 SATUNNAISTA LENTOKENTTÄÄ
 
     sql = """
     SELECT airport.name, country.name
