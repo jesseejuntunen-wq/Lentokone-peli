@@ -4,8 +4,8 @@ yhteys = mysql.connector.connect(
     host="127.0.0.1",
     port=3306,
     database="flight_game",
-    user="Jesse",
-    password="Jesse0802",
+    user="root",
+    password="301105",
     autocommit=True
 )
 
@@ -24,8 +24,8 @@ maanosat = {
 
 valittu_maanosa = maanosat.get(aloitus_valinta)
 
-
-def aloituspaikan_luonti(maanosa):
+#Haetaan tietokannasta lentokenttä ja maa missä se sijaitsee. Tämä toimii aloituspaikkana
+def aloituspaikan_luonti(aloitus_paikka):
 
     sql = """
     SELECT airport.name, country.name
@@ -39,7 +39,7 @@ def aloituspaikan_luonti(maanosa):
 
     kursori = yhteys.cursor()
 
-    kursori.execute(sql, (maanosa,))
+    kursori.execute(sql, (aloitus_paikka,))
     tulos = kursori.fetchone()
 
     if tulos:
@@ -52,4 +52,3 @@ def aloituspaikan_luonti(maanosa):
 
 aloituspaikan_luonti(valittu_maanosa)
 
-yhteys.close()
