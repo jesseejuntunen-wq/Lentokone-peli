@@ -45,8 +45,8 @@ def tapahtuman_pisteytys(vaikutus, valinta):
     elif valinta == 3:
         return round(vaikutus + (vaikutus * 0.3), 2)
 
-
-# TESTI: positiivinen tapahtuma
+#Tästä etenpäin testaan vaan, että se toimii
+# TESTI: positiivinen tapahtuma 
 
 print("POSITIIVINEN TAPAHTUMA")
 
