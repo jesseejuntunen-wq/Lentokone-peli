@@ -6,8 +6,8 @@ yhteys = mysql.connector.connect(
     host="127.0.0.1",
     port=3306,
     database="flight_game",
-    user="root",
-    password="301105",
+    user="Jesse",
+    password="Jesse0802",
     autocommit=True
 )
 
@@ -104,6 +104,8 @@ FROM airport
 JOIN country
 ON airport.iso_country = country.iso_country
 WHERE country.continent = %s
+AND airport.latitude_deg IS NOT NULL
+AND airport.longitude_deg IS NOT NULL
 ORDER BY RAND()
 LIMIT 1
 """
@@ -138,7 +140,7 @@ while aika > 0:
     WHERE airport.latitude_deg IS NOT NULL
     AND airport.longitude_deg IS NOT NULL
     ORDER BY RAND()
-    LIMIT 100
+    LIMIT 500
     """
 
     kursori.execute(sql)
@@ -165,14 +167,18 @@ while aika > 0:
         if 100 <= etaisyys < 1000:
             lahella.append(lentokentta + (etaisyys,))
 
-        elif 1000 <= etaisyys < 4000:
+        elif 1000 <= etaisyys < 3000:
             kaukana.append(lentokentta + (etaisyys,))
 
-        elif etaisyys >= 4000:
+        elif 3000 <= etaisyys <= 6000:
             tosi_kaukana.append(lentokentta + (etaisyys,))
 
 
     # VALITAAN YKSI JOKAISESTA ETÄISYYDESTÄ
+
+    if len(lahella) == 0 or len(kaukana) == 0 or len(tosi_kaukana) == 0:
+        print("Lentokenttiä ei löytynyt tarpeeksi. Arvotaan uudestaan.")
+        continue
 
     paikka1 = random.choice(lahella)
     paikka2 = random.choice(kaukana)
