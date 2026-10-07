@@ -15,7 +15,7 @@ kursori = yhteys.cursor()
 aika = 30
 pisteet = 0
 
-# PELIN OHJEET
+# PELIN OHJEET TÄSSÄ KERROTAAN MITEN PELI TOIMII
 
 print()
 print("========================")
@@ -148,7 +148,7 @@ while aika > 0:
     valinta = int(input("Valitse 1, 2 tai 3 : "))
 
 
-    # PELAAJAN VALINTA
+    # TÄSSÄ PELAAJA VALITSEE LENTOKENTÄN
 
     if valinta == 1:
 
@@ -171,7 +171,7 @@ while aika > 0:
         continue
 
 
-    # LASKEUTUMINEN
+    # LASKEUTUMINEN + TÄMÄN HETKISET PISTEET
 
     print()
     print("Laskeuduit:", paikka[0])
@@ -180,7 +180,7 @@ while aika > 0:
     print("Pisteet:", pisteet)
 
 
-    # TAPAHTUMA
+    # SATUNNAINEN POSITIIVINEN TAI NEGATIIVINEN TAPAHTUMA
 
     if aika > 0:
 
