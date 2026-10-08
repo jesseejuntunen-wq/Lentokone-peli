@@ -3,8 +3,8 @@ import random
 
 yhteys = mysql.connector.connect(
     host="127.0.0.1",
-    user="Jesse",
-    password="Jesse0802",
+    user="0000",
+    password="0000",
     database="flight_game"
 )
 
