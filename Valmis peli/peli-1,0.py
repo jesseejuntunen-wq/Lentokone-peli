@@ -6,8 +6,8 @@ yhteys = mysql.connector.connect(
     host="127.0.0.1",
     port=3306,
     database="flight_game",
-    user="Jesse",
-    password="Jesse0802",
+    user="root",
+    password="301105",
     autocommit=True
 )
 
@@ -117,7 +117,7 @@ print()
 print("Aloituspaikkasi on:", paikka[0])
 print("Maa:", paikka[1])
 print("Aikaa:", aika, "päivää")
-print("Pisteet:", pisteet)
+print(f"Pisteet: {pisteet:.2f}")
 
 
 # PELI
@@ -230,7 +230,7 @@ while aika > 0:
     print("Laskeuduit:", paikka[0])
     print("Maa:", paikka[1])
     print("Aikaa jäljellä:", aika, "päivää")
-    print("Pisteet:", pisteet)
+    print(f"Pisteet: {pisteet:.2f}")
 
 
     # TAPAHTUMA
@@ -262,7 +262,7 @@ while aika > 0:
             pisteet = pisteet + tulos
 
             print("Vaikutus pisteisiin:", tulos)
-            print("Pisteet yhteensä:", pisteet)
+            print(f"Pisteet yhteensä: {pisteet:.2f}")
 
 
 # PELI LOPPUU
@@ -271,7 +271,7 @@ print()
 print("========================")
 print("Aika loppui!")
 print("Peli päättyi.")
-print("Lopulliset pisteet:", pisteet)
+print(f"Lopulliset pisteet: {pisteet:.2f}")
 print("========================")
 
 yhteys.close()
